@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .my-container{
-    @apply px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20
+    @apply mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24
   }
 
 .active{
@@ -12,6 +12,12 @@
   
 .default{
     @apply font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400
+  }
+
+@layer utilities {
+    .text-gradient {
+      color: linear-gradient(90deg, #7E90FE 20%, #9873FF 20%);
+    }
   }
 
 @layer utilities {
@@ -32,4 +38,8 @@
     @apply inline-flex items-center h-12 px-6 mb-3 font-medium text-white transition duration-200 rounded shadow-md  md:mb-0;
     @apply btn-gradient;
   }
+
+.title-common {
+  @apply font-bold text-black text-3xl
+}
   

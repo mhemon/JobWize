@@ -1,0 +1,84 @@
+[
+    {
+      "id": 1,
+      "companyName": "Acme Corporation",
+      "companyLogo": "https://i.pinimg.com/originals/38/12/02/38120276568c4647d4535dac9321485d.png",
+      "vacancyName": "Software Engineer",
+      "jobLocation": "San Francisco, CA",
+      "salary": "$120,000 - $150,000",
+      "jobType": "fulltime"
+    },
+    {
+      "id": 2,
+      "companyName": "Globex Corporation",
+      "companyLogo": "https://ih1.redbubble.net/image.3556494999.3089/st,small,507x507-pad,600x600,f8f8f8.jpg",
+      "vacancyName": "Data Analyst",
+      "jobLocation": "New York, NY",
+      "salary": "$80,000 - $100,000",
+      "jobType": "fulltime"
+    },
+    {
+      "id": 3,
+      "companyName": "Initech",
+      "companyLogo": "https://pbs.twimg.com/media/C-scvFmUAAApybh.jpg",
+      "vacancyName": "UX Designer",
+      "jobLocation": "Chicago, IL",
+      "salary": "$90,000 - $110,000",
+      "jobType": "fulltime"
+    },
+    {
+      "id": 4,
+      "companyName": "Wayne Enterprises",
+      "companyLogo": "https://www.seekpng.com/png/detail/326-3263900_wayne-enterprises.png",
+      "vacancyName": "Marketing Manager",
+      "jobLocation": "Gotham City, NJ",
+      "salary": "$110,000 - $130,000",
+      "jobType": "fulltime"
+    },
+    {
+      "id": 5,
+      "companyName": "Stark Industries",
+      "companyLogo": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Stark_Industries_Logo.png",
+      "vacancyName": "Web Developer",
+      "jobLocation": "Los Angeles, CA",
+      "salary": "$100,000 - $120,000",
+      "jobType": "remote"
+    },
+    {
+      "id": 6,
+      "companyName": "Umbrella Corporation",
+      "companyLogo": "https://w7.pngwing.com/pngs/125/1015/png-transparent-umbrella-corps-umbrella-corporation-logo-decal-umbrella-company-text-umbrella.png",
+      "vacancyName": "IT Security Specialist",
+      "jobLocation": "Raccoon City, IL",
+      "salary": "$90,000 - $110,000",
+      "jobType": "fulltime"
+    },
+    {
+      "id": 7,
+      "companyName": "Monsters, Inc.",
+      "companyLogo": "https://logos-world.net/wp-content/uploads/2022/01/Monsters-Inc.-Logo.png",
+      "vacancyName": "Animator",
+      "jobLocation": "Monstropolis",
+      "salary": "$80,000 - $100,000",
+      "jobType": "fulltime"
+    },
+    {
+      "id": 8,
+      "companyName": "Oscorp Industries",
+      "companyLogo": "https://i.pinimg.com/600x315/fa/19/83/fa1983be614d35f930b919d03172d590.jpg",
+      "vacancyName": "Artificial Intelligence Engineer",
+      "jobLocation": "New York, NY",
+      "salary": "$120,000 - $150,000",
+      "jobType": "remote"
+    },
+    {
+      "id": 9,
+      "companyName": "Dunder Mifflin",
+      "companyLogo": "https://w1.pngwing.com/pngs/927/242/png-transparent-paper-dunder-mifflin-logo-television-tshirt-sticker-sitcom-office.png",
+      "vacancyName": "Sales Representative",
+      "jobLocation": "Scranton, PA",
+      "salary": "$50,000 - $70,000",
+      "jobType": "fulltime"
+    }
+]
+  

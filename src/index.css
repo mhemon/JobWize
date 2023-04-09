@@ -42,4 +42,8 @@
 .title-common {
   @apply font-bold text-black text-3xl
 }
+
+.job-btn{
+  @apply rounded-md border-2 border-blue-500 text-blue-700 px-2 py-1 font-semibold
+}
   

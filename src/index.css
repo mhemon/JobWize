@@ -42,6 +42,10 @@
     @apply inline-flex items-center h-10 px-4 mb-3 font-medium text-white transition duration-200 rounded   md:mb-0;
     @apply btn-gradient;
   }
+  .apply-btn {
+    @apply h-10 w-full mb-3 font-medium text-white transition duration-200 rounded md:mb-0;
+    @apply btn-gradient;
+  }
 
 .title-common {
   @apply font-bold text-black text-3xl

@@ -8,7 +8,7 @@ import SingleJob from '../SingleJob';
 const Home = () => {
     const jobs = useLoaderData()
     const fourData = jobs.slice(0,4)
-
+    const [data, setData] = useState(false)
     return (
         <div>
             {/* banner part code */}
@@ -23,13 +23,13 @@ const Home = () => {
                 {/*feature jobs container */}
                 <div className='grid grid-cols-1 lg:grid-cols-2 w-2/3 mx-auto gap-4'>
                 {
-                    fourData.map(job => <SingleJob key={job.id}
+                    (data ? jobs : fourData).map(job => <SingleJob key={job.id}
                     job={job}></SingleJob>)
                 }
                 </div>
                 {/* see all jobs btn */}
-                <div className='text-center mt-6'>
-                    <button className='btn'>See All Jobs</button>
+                <div className={`text-center my-6 ${data && 'hidden'}`}>
+                    <button className='btn' onClick={() => setData(true)}>See All Jobs</button>
                 </div>
             </div>
         </div>

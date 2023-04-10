@@ -7,6 +7,7 @@ import Home from './components/Home/Home'
 import Statistics from './components/Statistics/Statistics'
 import Jobs from './components/Jobs/Jobs'
 import Blog from './components/Blog/Blog'
+import JobDetails from './components/JobDetails/JobDetails'
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,11 @@ const router = createBrowserRouter([
       {
         path: 'blog',
         element: <Blog/>
+      },
+      {
+        path: 'job-details/:ID',
+        element: <JobDetails/>,
+        loader: () => fetch('/fakedata.json')
       }
     ]
   }

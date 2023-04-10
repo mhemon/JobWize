@@ -8,16 +8,17 @@ import Statistics from './components/Statistics/Statistics'
 import Jobs from './components/Jobs/Jobs'
 import Blog from './components/Blog/Blog'
 import JobDetails from './components/JobDetails/JobDetails'
+import jobsdataLoader from './loaders/getJobsdata'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App/>,
+    loader: jobsdataLoader,
     children: [
       {
         path: '/',
-        element: <Home/>,
-        loader: () => fetch('fakedata.json')
+        element: <Home/>
       },
       {
         path: 'statistics',
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
       {
         path: 'job-details/:ID',
         element: <JobDetails/>,
-        loader: () => fetch('/fakedata.json')
+        loader: jobsdataLoader
       }
     ]
   }

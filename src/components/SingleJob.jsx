@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import { MapPinIcon, CurrencyDollarIcon } from '@heroicons/react/24/solid'
 import { Link } from 'react-router-dom';
 
 const SingleJob = ({job}) => {
     const {companyName, companyLogo, vacancyName, jobLocation, salary, jobType, id} = job
+
     return (
         <div className='border-2 border-gray-300 rounded-lg pl-4 pb-2'>
             {/* img container */}

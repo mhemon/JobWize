@@ -17,15 +17,15 @@ const removeFromDb = id => {
     const jobCart = getJobCart();
     if (id in jobCart) {
         delete jobCart[id];
-        localStorage.setItem('shopping-cart', JSON.stringify(jobCart));
+        localStorage.setItem('job-cart', JSON.stringify(jobCart));
     }
 }
 
 const getJobCart = () => {
     let jobCart = {};
 
-    //get the shopping cart from local storage
-    const storedCart = localStorage.getItem('shopping-cart');
+    //get the job cart from local storage
+    const storedCart = localStorage.getItem('job-cart');
     if (storedCart) {
         jobCart = JSON.parse(storedCart);
     }

@@ -1,13 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import headerImg from '../../assets/All Images/Vector.png'
 import { MapPinIcon, CurrencyDollarIcon, CalendarDaysIcon, PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
+import { addToDb } from '../../utilities/localdb';
 
 const JobDetails = () => {
-    const data = useLoaderData()
+    const {jobs} = useLoaderData()
     const { ID } = useParams()
-    const singleData = data.find(item => item.id === parseInt(ID))
+    const singleData = jobs.find(item => item.id === parseInt(ID))
+
     const { companyLogo, companyName, id, jobLocation, jobType, salary, vacancyName } = singleData
+
+    const handleApplyNowBtn = (id) => {
+        addToDb(id)
+    }
     return (
         <div>
             {/* extra header section */}
@@ -20,8 +26,8 @@ const JobDetails = () => {
             </div>
 
             <div className='w-3/4 mx-auto'>
-                <div class="grid grid-cols-3 gap-4">
-                    <div class="col-span-2 pt-20">
+                <div className="grid grid-cols-3 gap-4">
+                    <div className="col-span-2 pt-20">
                         {/* Job description */}
                         <p><span className='font-bold'>Job Description:</span><small> A UI/UX (User Interface/User Experience) designer is responsible for designing and creating engaging and effective interfaces for software and web applications. This includes designing the layout, visual design, and interactivity of the user interface.</small></p>
                         {/* Job responsibility */}
@@ -32,7 +38,7 @@ const JobDetails = () => {
                         <p className='pt-5'><span className='font-bold'>Experiences:</span><small> 2-3 Years in this field.</small></p>
                     </div>
                     {/* sidebar section */}
-                    <div class="col-span-1 pt-20">
+                    <div className="col-span-1 pt-20">
                         
                         {/* sidebar main container */}
                         <div className='bg-blue-100 px-4 pt-4 rounded-lg'>
@@ -76,7 +82,7 @@ const JobDetails = () => {
                         </div>
                         {/* apply now btn */}
                         <div className='my-4 text-center'>
-                            <button className='apply-btn'>Apply Now</button>
+                            <button onClick={() => handleApplyNowBtn(id)} className='apply-btn'>Apply Now</button>
                         </div>
                     </div>
                 </div>

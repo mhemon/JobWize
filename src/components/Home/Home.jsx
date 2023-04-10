@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import JobCategory from '../JobCategory';
 import Banner from '../Banner';
 import { useLoaderData } from 'react-router-dom';
 import SingleJob from '../SingleJob';
+import { CartContext, JobsContext } from '../../App';
 
 
 const Home = () => {
-    const jobs = useLoaderData()
-    const fourData = jobs.slice(0,4)
+    const jobs = useContext(JobsContext || [])
+    const [cart, setCart] = useContext(CartContext || [])
+
+    const copyData = [...jobs].slice(0,4)
+    const fourData = [...copyData]
     const [data, setData] = useState(false)
     return (
         <div>
@@ -25,6 +29,9 @@ const Home = () => {
                 {
                     (data ? jobs : fourData).map(job => <SingleJob key={job.id}
                     job={job}></SingleJob>)
+
+                    // (data ? Array.isArray(jobs) : Array.isArray(fourData)) ? (data ? jobs : fourData).map(job => <SingleJob key={job.id} job={job}></SingleJob>) : null
+
                 }
                 </div>
                 {/* see all jobs btn */}

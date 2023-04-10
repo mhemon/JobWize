@@ -1,14 +1,28 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { CartContext } from '../../App';
 import headerImg from '../../assets/All Images/Vector.png'
 import LocalJobCard from '../LocalJobCard';
 
 const Jobs = () => {
     const [cart, setCart] = useContext(CartContext || [])
-
+    const [data, setData] = useState(false)
     const handleOptionClick = (event) => {
-        console.log(event.target.value)
+        // console.log(event.target.value)
+        const isFilter = event.target.value
+       
+        if(isFilter === 'onsite'){
+            const remain = cart.filter(job => job.jobType === 'fulltime')
+            setData(remain)
+        }
+
+        if(isFilter === 'remote'){
+            const remain = cart.filter(job => job.jobType === 'remote')
+            setData(remain)
+        }
+        
     }
+
+    
     return (
         <div>
             {/* extra header section */}
@@ -36,9 +50,9 @@ const Jobs = () => {
                 </div>
 
                 {/* from local storage */}
-                <div className='mt-4'>
+                <div className='mt-4 mb-10'>
                 {
-                    cart.map(job => <LocalJobCard
+                    (data ? data : cart).map(job => <LocalJobCard
                     job={job}
                     key={job.id}></LocalJobCard>)
                 }

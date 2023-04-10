@@ -7,7 +7,7 @@ const jobsdataLoader = async () => {
     const savedCart = getJobCart()
     const initialCart = []
     for (const id in savedCart) {
-      const foundjob = jobs.find(job => job.id === id)
+      const foundjob = jobs.find(job => job.id === parseInt(id))
       if (foundjob) {
         const quantity = savedCart[id]
         foundjob.quantity = quantity

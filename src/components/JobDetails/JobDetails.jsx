@@ -3,17 +3,36 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import headerImg from '../../assets/All Images/Vector.png'
 import { MapPinIcon, CurrencyDollarIcon, CalendarDaysIcon, PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
 import { addToDb } from '../../utilities/localdb';
+import { CartContext } from '../../App';
 
 const JobDetails = () => {
-    const {jobs} = useLoaderData()
+    const [cart, setCart] = useContext(CartContext || [])
+    const { jobs } = useLoaderData()
     const { ID } = useParams()
     const singleData = jobs.find(item => item.id === parseInt(ID))
 
     const { companyLogo, companyName, id, jobLocation, jobType, salary, vacancyName } = singleData
 
-    const handleApplyNowBtn = (id) => {
-        addToDb(id)
+    const handleApplyNowBtn = (singleData) => {
+        let newCart = []
+        const exists = cart.find(
+            existingProduct => existingProduct.id === singleData.id
+        )
+        if (!exists) {
+            singleData.quantity = 1
+            newCart = [...cart, singleData]
+        } else {
+            const rest = cart.filter(
+                existingProduct => existingProduct.id !== singleData.id
+            )
+            exists.quantity = exists.quantity + 1
+            newCart = [...rest, exists]
+        }
+
+        setCart(newCart)
+        addToDb(singleData.id)
     }
+
     return (
         <div>
             {/* extra header section */}
@@ -39,34 +58,34 @@ const JobDetails = () => {
                     </div>
                     {/* sidebar section */}
                     <div className="col-span-1 pt-20">
-                        
+
                         {/* sidebar main container */}
                         <div className='bg-blue-100 px-4 pt-4 rounded-lg'>
                             <h3 className='font-bold pb-4'>Job Details</h3>
                             <div className='border-b border-blue-500'></div>
-                            
+
                             {/* salary */}
                             <div className='flex gap-2 py-4'>
                                 <CurrencyDollarIcon className='h-6 text-blue-500' />
                                 <p><span className='font-bold'>Salary:</span> {salary}</p>
                             </div>
-                           
+
                             {/* job title */}
                             <div className='flex gap-2 pb-4'>
                                 <CalendarDaysIcon className='h-6 text-blue-500' />
                                 <p><span className='font-bold'>Job title:</span> {vacancyName}</p>
                             </div>
-                            
+
                             {/* job details */}
                             <h3 className='font-bold pb-4'>Contact Information</h3>
                             <div className='border-b border-blue-500'></div>
-                            
+
                             {/* phone */}
                             <div className='flex gap-2 py-4'>
                                 <PhoneIcon className='h-6 text-blue-500' />
                                 <p><span className='font-bold'>Phone:</span> 01750-000 000</p>
                             </div>
-                           
+
                             {/* email */}
                             <div className='flex gap-2 pb-4'>
                                 <EnvelopeIcon className='h-6 text-blue-500' />
@@ -82,7 +101,7 @@ const JobDetails = () => {
                         </div>
                         {/* apply now btn */}
                         <div className='my-4 text-center'>
-                            <button onClick={() => handleApplyNowBtn(id)} className='apply-btn'>Apply Now</button>
+                            <button onClick={() => handleApplyNowBtn(singleData)} className='apply-btn'>Apply Now</button>
                         </div>
                     </div>
                 </div>

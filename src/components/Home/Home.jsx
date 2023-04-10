@@ -13,6 +13,7 @@ const Home = () => {
     const copyData = [...jobs].slice(0,4)
     const fourData = [...copyData]
     const [data, setData] = useState(false)
+
     return (
         <div>
             {/* banner part code */}

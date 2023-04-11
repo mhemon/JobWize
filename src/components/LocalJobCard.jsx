@@ -8,7 +8,7 @@ const LocalJobCard = ({job}) => {
         <div className='shadow-md rounded-lg border-2 my-2 border-gray-100 flex items-center'>
             {/* img part */}
             <div className='w-48 h-48 px-3 py-3'>
-                <img className='w-full h-full' src={companyLogo} alt="" />
+                <img className='w-full h-full bg-gray-100 border' src={companyLogo} alt="" />
             </div>
             
             {/* main content part */}

@@ -1,5 +1,6 @@
 import React from 'react';
 import manImage from '../assets/All Images/man.png';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -8,7 +9,7 @@ const Banner = () => {
                     {/* text part */}
                     <h1 className='font-bold text-black text-5xl lg:leading-tight lg:pt-10'>One Step <br /> Closer To Your <br /> <span style={{color: '#7E90FE'}}>Dream Job</span></h1>
                     <p className='text-gray-500 lg:w-3/4 py-4'>Explore thousands of job opportunities with all the information you need. Its your future. Come find it. Manage all your job application from start to finish.</p>
-                    <div className='text-center lg:text-start'><button className='btn'>Get Started</button></div>
+                    <Link to='applied-jobs'><div className='text-center lg:text-start'><button className='btn'>Get Started</button></div></Link>
                 </div>
                 <div className='w-full md:w-1/2 md:ml-4'>
                     {/* img part */}

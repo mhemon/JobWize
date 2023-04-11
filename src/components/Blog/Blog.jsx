@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blog = () => {
     return (
-        <div className='my-container'>
+        <div className='my-container pb-10'>
             <div className='max-w-screen-xl sm:mx-auto mt-10'>
                 <div className='grid grid-cols-1 gap-16 row-gap-8 lg:grid-cols-2'>
                     <div className='space-y-8'>

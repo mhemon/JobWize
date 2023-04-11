@@ -9,12 +9,14 @@ import Jobs from './components/Jobs/Jobs'
 import Blog from './components/Blog/Blog'
 import JobDetails from './components/JobDetails/JobDetails'
 import jobsdataLoader from './loaders/getJobsdata'
+import ErrorPage from './components/ErrorPage'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App/>,
     loader: jobsdataLoader,
+    errorElement: <ErrorPage/>,
     children: [
       {
         path: '/',
@@ -42,7 +44,7 @@ const router = createBrowserRouter([
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <>
     <RouterProvider router={router}/>
-  </React.StrictMode>,
+  </>,
 )

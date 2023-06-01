@@ -28,15 +28,14 @@ const Jobs = () => {
             {/* extra header section */}
             <div className='bg-blue-50 my-container'>
                 {/* header img section */}
-                <div className='h-40 flex'>
-                    <img className='h-full' src={headerImg} alt="" />
-                    <h1 className='font-bold text-lg flex justify-center items-center h-full w-[calc(100vw-400px)]'>Applied Jobs</h1>
+                <div className='h-40 flex justify-center items-center bg-images'>
+                    <h1 className='font-bold text-lg flex justify-center items-center h-full w-full md:w-[calc(100vw-400px)]'>Applied Jobs</h1>
                 </div>
             </div>
 
-            <div className='w-3/4 mx-auto'>
+            <div className='md:w-3/4 mx-auto'>
                 {/* dropdown menu */}
-                <div className="relative inline-block flex justify-end mt-20">
+                <div className="relative flex justify-end mt-4 me-2 md:mt-20">
                     <select className="appearance-none border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" onChange={handleOptionClick}>
                         <option value="">Filter By</option>
                         <option value='onsite'>Onsite Job</option>
@@ -50,7 +49,7 @@ const Jobs = () => {
                 </div>
 
                 {/* from local storage */}
-                <div className='mt-4 mb-10'>
+                <div className='md:mt-4 mb-10'>
                 {
                     (data ? data : cart).map(job => <LocalJobCard
                     job={job}

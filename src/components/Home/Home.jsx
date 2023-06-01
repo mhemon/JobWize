@@ -26,7 +26,7 @@ const Home = () => {
                 <p className='text-center mt-4 text-gray-500 px-2 mb-4'>Explore thousands of job opportunities with all the information you need. Its your future</p>
 
                 {/*feature jobs container */}
-                <div className='grid grid-cols-1 lg:grid-cols-2 w-2/3 mx-auto gap-4 pb-5'>
+                <div className='grid grid-cols-1 lg:grid-cols-2 md:w-2/3 mx-auto gap-4 pb-5 px-4'>
                 {
                     (data ? jobs : fourData).map(job => <SingleJob key={job.id}
                     job={job}></SingleJob>)

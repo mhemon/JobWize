@@ -14,7 +14,7 @@ const jobsdataLoader = async () => {
         initialCart.push(foundjob)
       }
     }
-    return { jobs, initialCart }
+    return { jobs, initialCart}
   } catch (error) {
     console.error(error)
     return []

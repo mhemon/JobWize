@@ -12,7 +12,7 @@ const JobCategory = () => {
                 {/* types of job category */}
                 <div className='mt-8 flex flex-wrap justify-center gap-6'>
                     {/* category 1 */}
-                    <div className='w-44 h-36 bg-blue-50 rounded-lg'>
+                    <div className='w-full mx-2 md:w-44 h-36 bg-blue-50 rounded-lg'>
                         <div className='ml-5 mt-5'>
                             {/* img part */}
                             <div className='w-16 h-16 bg-blue-100 flex justify-center items-center rounded-md'>
@@ -25,7 +25,7 @@ const JobCategory = () => {
                         </div>
                     </div>
                     {/* category 2 */}
-                    <div className='w-44 h-36 bg-blue-50 rounded-lg'>
+                    <div className='w-full mx-2 md:w-44 h-36 bg-blue-50 rounded-lg'>
                         <div className='ml-5 mt-5'>
                             {/* img part */}
                             <div className='w-16 h-16 bg-blue-100 flex justify-center items-center rounded-md'>
@@ -38,7 +38,7 @@ const JobCategory = () => {
                         </div>
                     </div>
                     {/* category 3 */}
-                    <div className='w-44 h-36 bg-blue-50 rounded-lg'>
+                    <div className='w-full mx-2 md:w-44 h-36 bg-blue-50 rounded-lg'>
                         <div className='ml-5 mt-5'>
                             {/* img part */}
                             <div className='w-16 h-16 bg-blue-100 flex justify-center items-center rounded-md'>
@@ -51,7 +51,7 @@ const JobCategory = () => {
                         </div>
                     </div>
                     {/* category 4 */}
-                    <div className='w-44 h-36 bg-blue-50 rounded-lg'>
+                    <div className='w-full mx-2 md:w-44 h-36 bg-blue-50 rounded-lg'>
                         <div className='ml-5 mt-5'>
                             {/* img part */}
                             <div className='w-16 h-16 bg-blue-100 flex justify-center items-center rounded-md'>

@@ -10,7 +10,7 @@ const Footer = () => {
             <div className='grid grid-cols-1 lg:grid-cols-6 my-container px-4 p-2 lg:py-10'>
             <div className='col-span-2 '>
                 <h1 className='font-bold text-2xl'>Job Wise</h1>
-                <p className='lg:w-3/4 pt-2'><small>There are many variations of passages of Lorem Ipsum , but the majority have suffered alteration in some form.</small></p>
+                <p className='lg:w-3/4 pt-2'><small>Find your dream job today with our job Wize. Register for free and start your job search today!</small></p>
                 {/* icons */}
                 <div className='flex gap-2 mt-4'>
                     <Link to='/'>

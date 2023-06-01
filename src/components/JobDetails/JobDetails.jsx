@@ -1,19 +1,34 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
-import headerImg from '../../assets/All Images/Vector.png'
 import { MapPinIcon, CurrencyDollarIcon, CalendarDaysIcon, PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
 import { addToDb } from '../../utilities/localdb';
 import { CartContext } from '../../App';
+import Swal from 'sweetalert2';
+import './JobDetails.css'
 
 const JobDetails = () => {
     const [cart, setCart] = useContext(CartContext || [])
     const { jobs } = useLoaderData()
     const { ID } = useParams()
+
     const singleData = jobs.find(item => item.id === parseInt(ID))
 
     const { companyLogo, companyName, id, jobLocation, jobType, salary, vacancyName } = singleData
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+
     const handleApplyNowBtn = (singleData) => {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Job applied success',
+            showConfirmButton: false,
+            timer: 1500
+        })
+
         let newCart = []
         const exists = cart.find(
             existingProduct => existingProduct.id === singleData.id
@@ -38,15 +53,14 @@ const JobDetails = () => {
             {/* extra header section */}
             <div className='bg-blue-50 my-container'>
                 {/* header img section */}
-                <div className='h-40 flex'>
-                    <img className='h-full' src={headerImg} alt="" />
-                    <h1 className='font-bold text-lg flex justify-center items-center h-full w-[calc(100vw-400px)]'>Job Details</h1>
+                <div className='h-40 flex justify-center items-center bg-images'>
+                    <h1 className='font-bold text-lg flex justify-center items-center h-full w-full md:w-[calc(100vw-400px)]'>Job Details</h1>
                 </div>
             </div>
 
-            <div className='w-3/4 mx-auto'>
-                <div className="grid grid-cols-3 gap-4">
-                    <div className="col-span-2 pt-20">
+            <div className='w-full md:w-3/4 mx-auto px-4'>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="md:col-span-2 pt-4 md:pt-20">
                         {/* Job description */}
                         <p><span className='font-bold'>Job Description:</span><small> A UI/UX (User Interface/User Experience) designer is responsible for designing and creating engaging and effective interfaces for software and web applications. This includes designing the layout, visual design, and interactivity of the user interface.</small></p>
                         {/* Job responsibility */}
@@ -57,7 +71,7 @@ const JobDetails = () => {
                         <p className='pt-5'><span className='font-bold'>Experiences:</span><small> 2-3 Years in this field.</small></p>
                     </div>
                     {/* sidebar section */}
-                    <div className="col-span-1 pt-20">
+                    <div className="md:col-span-1 pt-4 md:pt-20">
 
                         {/* sidebar main container */}
                         <div className='bg-blue-100 px-4 pt-4 rounded-lg'>
